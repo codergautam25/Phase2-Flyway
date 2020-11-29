@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Register</title>
+</head>
+<body>
+<form action="RegisterServlet" method="post">
+	Enter Email : <input type="email" name="email" required="required"><br>
+	Enter First Name :<input type="text" name="fname" required="required"><br>
+	Enter Last Name : <input type="text" name="lname" required="required"><br>
+	Enter Age : <input type="number" name="age" maxlength="2" required="required">	<br>
+	Enter Mobile Number : <input type="text" name="mobile" maxlength="10" required="required"><br>
+	Gender : <input type="radio" name="gender" value="female">Female
+		    	<input type="radio" name="gender" value="Male">Male<br/>
+    Password : <input type="password" name="password">
+	Country : <input type="text" name="country" required="required"><br>
+	
+	<button type="submit">Register</button>		    <button type="reset">Clear</button>	
+				
+
+</form>
+
+</body>
+</html>
