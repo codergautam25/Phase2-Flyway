@@ -10,9 +10,73 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
+<style>
+body{
+margin : 0;
+padding : 0;
+}
+.head{
+background-color : #000;
+color : #fff;
+height : 50px;
+}
+h1{
+	margin: auto;
+	font-family : "Times New Roman", Times, serif;
+	text-align : center;
+}
+span{
+	margin: auto;
+	font-family : "Times New Roman", Times, serif;
+	text-align : center;
+	font-size : 35px;
+}
+button{
+	margin : 10px;
+  	border-radius: 4px; 
+	border:none;
+	height: 30px;
+	display : inline-block;
+	font-size : 15px;
+	font-width : bold;
+	background-color: red;
+}
+a{
+	text-decoration : none;
+	color : #fff;
+}
+.details-box{
+	margin :auto;
+	margin-top : 40px;
+	width : 500px;
+	border : 1px solid #ccc;
+	box-shadow : 0 8px 12px 0px rgba(0,0,0,0.3);
+	positive : absolute;
+}
+table {
+  border-collapse: collapse;
+  width: 60%;
+}
+
+th{
+  text-align: left;
+  padding: 8px;
+}
+td{
+  text-align: right;
+  padding: 8px;
+}
+tr:nth-child(even){border-bottom : 1px solid #ccc;}
+tr:nth-child(odd){border-bottom : 1px solid #ccc;}
+</style>
 </head>
 <body>
 <center>
+<div class="head">
+	<span>FlyAway</span>
+	<button style="float:right;"><a href="logout">Log out</a></button>
+</div>
+<div class="details-box">
 <%
 Object s=session.getAttribute("flightno");
 
@@ -42,18 +106,17 @@ try {
 		  
 		  %>
 		  
-		
-		  <h2>Flight Booking Details</h2>
-		  <button style="float:right;"><a href="logout">Log out</a></button>
+		 <div>
+		  <h2><u>Flight Booking Details</u></h2>
 		  <table>
-		  <tr><td align="right">Flight No. : </td><td><%=rs.getString("flightno")%></td></tr>
-		  <tr><td align="right">Origin : </td><td><%=rs.getString("origin")%></td></tr>
-		  <tr><td align="right">Destination : </td><td><%=rs.getString("destination")%></td></tr>
-		  <tr><td align="right">Departure Time : </td><td><%=rs.getString("departure_time")%></td></tr>
-		  <tr><td align="right">Arrival Time : </td><td><%=rs.getString("arrival_time")%></td></tr>
-		  <tr><td align="right">Fare : </td><td><%=rs.getString("fare")%></td></tr>
+		  <tr><th align="right">Flight No. : </th><td><%=rs.getString("flightno")%></td></tr>
+		  <tr><th align="right">Origin : </th><td><%=rs.getString("origin")%></td></tr>
+		  <tr><th align="right">Destination : </th><td><%=rs.getString("destination")%></td></tr>
+		  <tr><th align="right">Departure Time : </th><td><%=rs.getString("departure_time")%></td></tr>
+		  <tr><th align="right">Arrival Time : </th><td><%=rs.getString("arrival_time")%></td></tr>
+		  <tr><th align="right">Fare : </th><td><%=rs.getString("fare")%></td></tr>
 		  </table>
-		  
+		 </div>
 
 	<%   }
 
@@ -63,6 +126,7 @@ try {
 	System.out.println("Some Error occured :"+ e);
 }
 %>
+</div>
 </center>
 </body>
 </html>

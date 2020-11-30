@@ -22,25 +22,47 @@ background-color : #000;
 color : #fff;
 height : 50px;
 }
-h2{
-padding-top : 10px;
-font-family : "Brush Script MT", Brush Script Std, cursive;
+h1{
+font-family : "Times New Roman", Times, serif;
 }
-tr{
-border : 1px solid #000;
- 
-} 
+table {
+  border-collapse: collapse;
+  width: 70%;
+}
+
+th, td {
+  text-align: center;
+  padding: 8px;
+}
+
+tr:nth-child(even){border-bottom : 1px solid #ccc;}
+tr:nth-child(odd){border-bottom : 1px solid #ccc;}
+th {
+  background-color: #33B7FF;
+}
+a{
+	text-decoration : none;
+	border-radius: 4px; 
+	border:none;
+	height: 25px;
+	width : 100px;
+	padding-top : 8px;
+	display : inline-block;
+	font-size : 17px;
+	background-color: rgb(0, 255, 128);
+	color : #000;
+}
 </style>
 </head>
 <body>
 <center>
 <div>
 <div class="head">
-	<h2>FlyAway</h2>
+	<h1>FlyAway</h1>
 </div>
 </div>
 <div>
-	<h3><u>Flight details</u></h3>
+	<h2>* Available flights are here *</h2>
 		<table>
 			<tr>
 				<th>Flight no</th>
@@ -48,7 +70,7 @@ border : 1px solid #000;
 				<th>Destination</th>
 				<th>Departure Time</th>
 				<th>Arrival Time</th>
-				<th>Fare</th>
+				<th>Fare</th><th></th>
 			</tr>
 
 			<%!String url = "jdbc:mysql://localhost:3306/flyaway";
@@ -108,7 +130,7 @@ border : 1px solid #000;
 				<td><%= rs.getString("arrival_time")%></td>
 				<td><%= rs.getString("fare")%></td>
 				
-				<td> <a href="login.jsp?flightno=<%= rs.getString("flightno") %>">Book Now</a></td>
+				<td> <a href="login.jsp?flightno=<%= rs.getString("flightno") %>"><b>Book Now</b></a></td>
 				
 			</tr>
 
